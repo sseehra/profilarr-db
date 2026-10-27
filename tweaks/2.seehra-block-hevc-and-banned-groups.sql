@@ -3,10 +3,10 @@
 -- @name: Seehra profiles: block HEVC and Banned Groups (Regular)
 -- @exportedAt: 2026-10-27T23:15:00.000Z
 
--- The Seehra profiles (op 204) were copied from 1080p/2160p Remux and inherited -999999 on
--- the h265 and x265 (WEB) custom formats. Upstream op 384 (simplify-codecs) deleted those
--- formats in favour of a single HEVC format, and the FK cascade dropped the blocks with them.
--- Re-block on HEVC, matching what upstream's Remux profiles now score.
+-- The Seehra profiles (tweaks/1) were copied from 1080p/2160p Remux and inherited -999999 on
+-- the h265 and x265 (WEB) custom formats. Upstream op 384 (simplify-codecs) replaced those
+-- formats with a single HEVC format. Block HEVC instead, matching what upstream's Remux
+-- profiles now score.
 -- Also restore Banned Groups (Regular), which the Remux profiles score -999999 but the
 -- Seehra copies left out.
 

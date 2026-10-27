@@ -3,6 +3,12 @@
 -- @name: Create Seehra 1080p & 2160p profiles (hardware-tuned, upgrades off)
 -- @exportedAt: 2026-07-08T07:20:00.000Z
 
+-- Fork-only customisation. Lives in tweaks/ (applied after the whole upstream base layer, with
+-- its own numbering) so it can never collide with upstream's ops/ order numbers. It was
+-- originally ops/204, which collided with upstream's 204 and broke Profilarr's cache build.
+-- Since it now runs after upstream op 384 (simplify-codecs), the h265 / x265 (WEB) rows were
+-- removed: those formats no longer exist; tweaks/2 blocks the replacement HEVC format instead.
+
 -- ===== 1080p — Seehra (from 1080p Remux) =====
 INSERT INTO quality_profiles (name,description,upgrades_allowed,minimum_custom_format_score,upgrade_until_score,upgrade_score_increment) VALUES ('1080p — Seehra','1080p Remux utilizes **Audio Formats** to prioritise high quality Lossless HD Blurays with a fallback to Transparent Bluray Encodes.
 
@@ -229,13 +235,11 @@ INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_n
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','WEB-DL Tier 4','all',40);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','WEB-DL Tier 5','all',20);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','Xvid','all',-999999);
-INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','h265','all',-999999);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','iP','all',0);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','iT','all',1000);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','x265 (Bluray)','radarr',-820000);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','x265 (Bluray)','sonarr',-820000);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','x265 (Remux)','all',-999999);
-INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','x265 (WEB)','all',-999999);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','Freeleech 100%','all',10);
 
 -- ===== 2160p — Seehra (from 2160p Remux) =====
@@ -496,7 +500,6 @@ INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_n
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','WEB-DL Tier 4','all',40);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','WEB-DL Tier 5','all',20);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','Xvid','all',-999999);
-INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','h265','all',-999999);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','iP','all',0);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','iT','radarr',3000);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','iT','sonarr',1000);
@@ -506,5 +509,4 @@ INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_n
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','x265 (Bluray)','sonarr',-820000);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','x265 (Missing)','all',-999999);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','x265 (Remux)','all',-999999);
-INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','x265 (WEB)','all',-999999);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','Freeleech 100%','all',10);
