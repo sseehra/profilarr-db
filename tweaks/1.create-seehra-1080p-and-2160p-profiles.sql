@@ -240,7 +240,6 @@ INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_n
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','x265 (Bluray)','radarr',-820000);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','x265 (Bluray)','sonarr',-820000);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','x265 (Remux)','all',-999999);
-INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('1080p — Seehra','Freeleech 100%','all',10);
 
 -- ===== 2160p — Seehra (from 2160p Remux) =====
 INSERT INTO quality_profiles (name,description,upgrades_allowed,minimum_custom_format_score,upgrade_until_score,upgrade_score_increment) VALUES ('2160p — Seehra','2160p Remux utilizes **Video / Audio Formats** to prioritise high quality lossless copies of UHD Blurays.
@@ -509,4 +508,3 @@ INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_n
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','x265 (Bluray)','sonarr',-820000);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','x265 (Missing)','all',-999999);
 INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','x265 (Remux)','all',-999999);
-INSERT INTO quality_profile_custom_formats (quality_profile_name,custom_format_name,arr_type,score) VALUES ('2160p — Seehra','Freeleech 100%','all',10);
